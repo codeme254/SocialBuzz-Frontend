@@ -21,7 +21,9 @@ body {
 #root {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
+  position: relative;
+  min-height: 100vh;
 }
 
 :root {
@@ -41,6 +43,7 @@ body {
 
 body {
   font-size: 1.4rem;
+  background-color: #f3f2ef;
 }
 
 .form-group {
