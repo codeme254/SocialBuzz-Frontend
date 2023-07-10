@@ -1,8 +1,18 @@
 import { Link } from "react-router-dom";
+import Title from "../../components/Title/Title";
+import "./SignUp.css";
+
 const SignUp = () => {
   return (
     <div className="sign-up-form-container">
       <form action="" className="sign-up-form">
+        <div className="form-text-top">
+          <Title text="Create your account" />
+          <p>
+            Create a free account to see photos, videos and updates from your
+            friends
+          </p>
+        </div>
         <div className="form-group">
           <label htmlFor="firstName" className="form-group-label">
             first name
@@ -11,6 +21,7 @@ const SignUp = () => {
             type="text"
             id="firstName"
             className="form-group__textual-input"
+            placeholder="first name"
           />
         </div>
 
@@ -22,6 +33,7 @@ const SignUp = () => {
             type="text"
             id="lastName"
             className="form-group__textual-input"
+            placeholder="last name"
           />
         </div>
 
@@ -33,6 +45,7 @@ const SignUp = () => {
             type="email"
             id="emailAddress"
             className="form-group__textual-input"
+            placeholder="email address eg johndoe@gmail.com"
           />
         </div>
 
@@ -44,6 +57,7 @@ const SignUp = () => {
             type="text"
             id="username"
             className="form-group__textual-input"
+            placeholder="pick a username, be creative"
           />
         </div>
 
@@ -55,6 +69,7 @@ const SignUp = () => {
             type="text"
             id="statusText"
             className="form-group__textual-input"
+            placeholder="eg hey there, am using SocialBuzz, or I love my life"
           />
         </div>
 
@@ -66,6 +81,7 @@ const SignUp = () => {
             type="password"
             id="password"
             className="form-group__textual-input"
+            placeholder="type a strong password"
           />
         </div>
 
@@ -77,6 +93,7 @@ const SignUp = () => {
             type="password"
             id="confPass"
             className="form-group__textual-input"
+            placeholder="confirm your password"
           />
         </div>
 
@@ -106,7 +123,7 @@ const SignUp = () => {
           create account
         </button>
 
-        <p>
+        <p className="form-guide">
           Already have an account? <Link to="/login">login</Link>
         </p>
       </form>
