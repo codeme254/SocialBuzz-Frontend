@@ -1,4 +1,7 @@
 import { HiHome } from "react-icons/hi";
+import { IoIosPeople } from "react-icons/io";
+import { MdNotificationsActive } from "react-icons/md";
+import { HiOutlineInboxIn } from "react-icons/hi";
 import LinkIcon from "./LinkIcon";
 import userImage from "../../assets/Images/user-image.jpg";
 import "./Nav.css";
@@ -13,13 +16,13 @@ const Nav = () => {
             <LinkIcon icon={<HiHome />} label="home" />
           </li>
           <li className="header__nav--link-item">
-            <LinkIcon icon={<HiHome />} label="community" />
+            <LinkIcon icon={<IoIosPeople />} label="community" />
           </li>
           <li className="header__nav--link-item">
-            <LinkIcon icon={<HiHome />} label="notifications" />
+            <LinkIcon icon={<MdNotificationsActive />} label="notifications" />
           </li>
           <li className="header__nav--link-item">
-            <LinkIcon icon={<HiHome />} label="inbox" />
+            <LinkIcon icon={<HiOutlineInboxIn />} label="inbox" />
           </li>
         </ol>
         <ol className="header__nav-list header__nav--right">

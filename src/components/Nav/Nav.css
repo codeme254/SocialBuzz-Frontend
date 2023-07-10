@@ -49,6 +49,7 @@
   --size: 2rem;
   width: var(--size);
   height: var(--size);
+  /* fill: #333; */
 }
 
 .header__link--label {

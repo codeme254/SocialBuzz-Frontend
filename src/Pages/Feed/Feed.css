@@ -8,7 +8,7 @@
 }
 
 .feed__body--left {
-  background-color: green;
+  padding-right: 1rem;
 }
 
 .feed__body--center {
