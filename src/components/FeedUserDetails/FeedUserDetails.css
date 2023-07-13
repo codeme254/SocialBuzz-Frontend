@@ -33,7 +33,8 @@
   max-height: var(--size);
   border-radius: 50%;
   margin-right: 2rem;
-  border: 5px solid #f3f2ef;
+  /* border: 5px solid #f3f2ef; */
+  border: 5px solid #fff;
 }
 
 .feed-user-details__image img {

@@ -1,0 +1,31 @@
+.feed_user-action-links {
+  margin-top: 3rem;
+}
+
+.feed_user-action-links > *:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.feed__user-action-link,
+.feed__user-action-link:visited {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #999;
+  border-left: 6px solid #333;
+}
+
+.feed__user-action-link svg {
+  --size: 1.5rem;
+  width: var(--size);
+  height: var(--size);
+  margin-right: 0.5rem;
+  fill: #333;
+}
+
+.feed__user-action-link--label {
+  color: #333;
+  text-transform: capitalize;
+  font-weight: 600;
+}

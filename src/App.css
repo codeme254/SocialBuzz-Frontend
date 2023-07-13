@@ -39,11 +39,19 @@ body {
 
   --color-text-light: #484646;
   --color-primary: #4169e1;
+  --fixed-distance-top: 15rem;
 }
 
 body {
   font-size: 1.4rem;
   background-color: #f3f2ef;
+  position: relative;
+}
+
+.u-fixed-position-top {
+  position: fixed;
+  top: var(--fixed-distance-top);
+  left: 0;
 }
 
 .form-group {
