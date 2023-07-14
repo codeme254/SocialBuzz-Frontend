@@ -13,16 +13,20 @@ const Nav = () => {
       <nav className="header__nav">
         <ol className="header__nav-list header__nav--center">
           <li className="header__nav--link-item">
-            <LinkIcon icon={<HiHome />} label="home" />
+            <LinkIcon icon={<HiHome />} to="/feed" label="home" />
           </li>
           <li className="header__nav--link-item">
             <LinkIcon icon={<IoIosPeople />} label="community" />
           </li>
-          <li className="header__nav--link-item">
+          {/* <li className="header__nav--link-item">
             <LinkIcon icon={<MdNotificationsActive />} label="notifications" />
-          </li>
+          </li> */}
           <li className="header__nav--link-item">
-            <LinkIcon icon={<HiOutlineInboxIn />} label="inbox" />
+            <LinkIcon
+              icon={<HiOutlineInboxIn />}
+              to="/messaging"
+              label="inbox"
+            />
           </li>
         </ol>
         <ol className="header__nav-list header__nav--right">

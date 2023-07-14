@@ -1,0 +1,67 @@
+.messaging-body {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 8rem;
+  display: flex;
+}
+
+/* .messaging-body{
+  width: 85%;
+  border: 3px solid rebeccapurple;
+  margin: 0 auto;
+} */
+
+.message-preview__left-window {
+  width: 40%;
+  padding-right: 1rem;
+}
+
+.messaging-body__main-window {
+  width: 60%;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+.response-form {
+  margin-top: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100%;
+  max-width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0.5rem;
+}
+
+.response-form__input {
+  padding: 1rem;
+  width: 80%;
+  text-overflow: wrap;
+  border-radius: 100px;
+  /* border: none;
+  border: 2px solid black; */
+  border: none;
+  outline: none;
+  background-color: #d9d9d9;
+  margin-right: 0.5rem;
+}
+
+.response-form__input::placeholder {
+  text-transform: capitalize;
+}
+
+.response-form__submit-btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.response-form__submit-btn svg {
+  --size: 2.5rem;
+  width: var(--size);
+  height: var(--size);
+  cursor: pointer;
+}
