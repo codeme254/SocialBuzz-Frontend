@@ -5,16 +5,33 @@
 .feed__body {
   display: grid;
   grid-template-columns: 0.25fr 0.5fr 0.25fr;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .feed__body--left {
   padding-right: 1rem;
 }
 
-/* .feed__body--center {
-  background-color: orange;
-} */
-
+.feed__body--center {
+  /* margin-left: 45rem; */
+  height: calc(100vh - 8vh);
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.feed__body--center::-webkit-scrollbar {
+  /* display: none; */
+  width: 1rem;
+  background: var(--color-primary);
+  border-radius: 100px;
+}
+.feed__body--center::-webkit-scrollbar-thumb {
+  /* display: none; */
+  width: 1rem;
+  border-radius: 100px;
+  background: #333;
+}
 .feed__body--right {
   padding: 0 3rem;
   padding-right: 0;

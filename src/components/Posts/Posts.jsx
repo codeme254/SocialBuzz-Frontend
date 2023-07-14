@@ -44,6 +44,28 @@ const Posts = () => {
         numLikes="356"
         numComments="35"
       />
+
+      <Post
+        userProfilePhoto={userImage}
+        userFirstName="jane"
+        userLastName="krugger"
+        datePosted="4th March 2023, at 4:05PM"
+        postText={samplePostText}
+        postImage={photoPostExample}
+        numLikes="356"
+        numComments="35"
+      />
+
+      <Post
+        userProfilePhoto={userImage}
+        userFirstName="jane"
+        userLastName="krugger"
+        datePosted="4th March 2023, at 4:05PM"
+        postText={samplePostText}
+        postImage={photoPostExample}
+        numLikes="356"
+        numComments="35"
+      />
     </div>
   );
 };
