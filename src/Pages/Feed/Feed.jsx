@@ -6,6 +6,7 @@ import coverPhoto from "../../assets/Images/cover-photo-example.jpg";
 import FeedUserActionLinks from "../../components/FeedUserActionLinks/FeedUserActionLinks";
 import Follows from "../../components/Follows/Follows";
 import NewPost from "../../components/NewPost/NewPost";
+import Posts from "../../components/Posts/Posts";
 const Feed = () => {
   return (
     <div className="feed__container">
@@ -26,6 +27,7 @@ const Feed = () => {
         </div>
         <div className="feed__body--center">
           <NewPost userProfilePhoto={userImage} username="zaphenath254" />
+          <Posts />
         </div>
         <div className="feed__body--right">
           <Follows />

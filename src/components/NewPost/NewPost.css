@@ -1,6 +1,6 @@
 .new-post {
-  width: max-content;
-  width: 90%;
+  /* width: max-content; */
+  width: 60rem;
   margin: auto;
   background-color: #fff;
   padding: 0.5rem 2rem;
@@ -40,6 +40,7 @@
   cursor: pointer;
   color: #fff;
   padding: 1.5rem 2.5rem;
+  cursor: pointer;
 }
 
 .new-post-button-alt {
