@@ -9,3 +9,7 @@
   padding: 5rem;
   border-radius: 10px;
 }
+
+.form-group__text-top {
+  text-align: center;
+}
