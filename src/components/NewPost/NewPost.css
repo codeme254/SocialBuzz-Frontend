@@ -65,3 +65,84 @@
   height: var(--size);
   margin-right: 0.5rem;
 }
+
+.post-input-text {
+  border: 2px solid var(--color-primary);
+  outline: var(--color-primary);
+  min-width: 100%;
+  max-width: 100%;
+  border-radius: 5px;
+  resize: none;
+  padding: 1rem 2rem;
+  font-family: inherit;
+  font-weight: bold;
+  height: max-content;
+}
+
+.post-input-text::-webkit-scrollbar {
+  background-color: #ddd;
+  width: 1rem;
+  border-radius: 100px;
+  cursor: default !important;
+}
+
+.post-input-text::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 100px;
+  cursor: grab;
+}
+
+.file-upload {
+  display: flex;
+  align-items: center;
+}
+
+.file-upload-prompt {
+  font-size: 1.6rem;
+}
+
+.file-inputs {
+  display: flex;
+}
+
+.button-file-input {
+  position: relative;
+  overflow: hidden;
+  --size: 5rem;
+  width: var(--size);
+  min-width: var(--size);
+  max-width: var(--size);
+  height: var(--size);
+  min-height: var(--size);
+  max-height: var(--size);
+  border: none;
+  outline: none;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer !important;
+  margin-left: 2rem;
+}
+
+.button-file-input svg {
+  --size: 3rem;
+  width: var(--size);
+  min-width: var(--size);
+  max-width: var(--size);
+  height: var(--size);
+  min-height: var(--size);
+  max-height: var(--size);
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  /* fill: #fff; */
+}
+
+.button-file-input input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(5);
+  opacity: 0;
+}

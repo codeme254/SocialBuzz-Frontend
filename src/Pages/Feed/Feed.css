@@ -5,12 +5,10 @@
 .feed__body {
   display: grid;
   grid-template-columns: 0.25fr 0.5fr 0.2fr;
-  /* justify-items: center; */
   justify-content: center;
   position: relative;
   height: 100vh;
   overflow: hidden;
-  /* border: 3px solid red; */
   margin: 2rem auto;
 }
 
@@ -19,7 +17,6 @@
 }
 
 .feed__body--center {
-  /* margin-left: 45rem; */
   height: calc(100vh - 8vh);
   overflow: scroll;
   overflow-x: hidden;
