@@ -40,7 +40,7 @@ const FeedUserDetails = ({
         </div>
         <div className="user-stat">
           <h3 className="user-stat--count">{numberOfPosts}</h3>
-          <p className="user-stat--type">followers</p>
+          <p className="user-stat--type">posts</p>
         </div>
       </div>
     </div>

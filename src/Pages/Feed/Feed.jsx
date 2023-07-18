@@ -26,9 +26,9 @@ const Feed = () => {
             }
             aboutText={socialBuzzUserData && socialBuzzUserData.statusText}
             username={socialBuzzUserData && `@${socialBuzzUserData.username}`}
-            numberOfFollowers="56"
-            numberOfFollowing="35"
-            numberOfPosts="15"
+            numberOfFollowers={socialBuzzUserData && socialBuzzUserData.numberOfFollowers}
+            numberOfFollowing={socialBuzzUserData && socialBuzzUserData.numberOfFollowing}
+            numberOfPosts={socialBuzzUserData && socialBuzzUserData.numberOfPosts}
           />
           <FeedUserActionLinks />
         </div>
