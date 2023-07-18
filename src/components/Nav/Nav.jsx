@@ -6,10 +6,10 @@ import LinkIcon from "./LinkIcon";
 import userImage from "../../assets/Images/user-image.jpg";
 import "./Nav.css";
 import { UserContext } from "../../Helpers/Context";
-import { useContext } from 'react';
+import { useContext } from "react";
 
 const Nav = () => {
-  const {socialBuzzUserData, setSocialBuzzUserData} = useContext(UserContext);
+  const { socialBuzzUserData, setSocialBuzzUserData } = useContext(UserContext);
   return (
     <header className="header">
       <h1 className="logo">SocialBuzz</h1>
@@ -41,7 +41,9 @@ const Nav = () => {
                 className="header__image--img"
               />
             </div>
-            <p className="header__nav-right--username">@{socialBuzzUserData && socialBuzzUserData.username}</p>
+            <p className="header__nav-right--username">
+              @{socialBuzzUserData && socialBuzzUserData.username}
+            </p>
           </li>
           <li className="header__nav--link-item">
             <LinkIcon icon={<HiHome />} label="logout" />
