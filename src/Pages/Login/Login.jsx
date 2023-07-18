@@ -5,8 +5,11 @@ import { useForm } from "react-hook-form";
 import { apiDomain } from "../../utils/utils";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../Helpers/Context";
+import { useContext } from "react";
 
 const Login = () => {
+  const { socialBuzzUserData, setSocialBuzzUserData } = useContext(UserContext);
   const navigate = useNavigate();
 
   const {
@@ -26,8 +29,9 @@ const Login = () => {
     });
     const responseData = await login.json();
     if (login.ok) {
+      setSocialBuzzUserData(responseData);
       navigate("/feed");
-      toast.success("login successful");
+      toast.success("logged in successfully");
     } else {
       toast.error(responseData.message);
     }

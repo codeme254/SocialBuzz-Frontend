@@ -50,7 +50,10 @@ const Post = ({
           </button>
         </div>
       </div>
-      {/* post comments can be put here */}
+      {/* <form action="" className="post-comment">
+        <input type="text" name="" id="" className="post-comment__input" />
+        <button>comment</button>
+      </form> */}
     </div>
   ) : null;
 };

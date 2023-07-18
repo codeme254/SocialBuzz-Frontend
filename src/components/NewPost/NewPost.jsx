@@ -12,7 +12,7 @@ const NewPost = ({ userProfilePhoto, username }) => {
           />
         </div>
         <button className="new-post-btn new-post-button-alt">
-          What's on your mind @{username}
+          What's on your mind {username}
         </button>
       </div>
       <div className="new-post__bottom">

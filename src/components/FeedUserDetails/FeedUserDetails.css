@@ -48,7 +48,10 @@
 .user-details__full-name {
   text-transform: capitalize;
   color: #fff;
+  padding: 0.1rem;
+  background-color: var(--color-primary);
   margin-bottom: 0;
+  border-radius: 3px;
 }
 
 .user-stats {

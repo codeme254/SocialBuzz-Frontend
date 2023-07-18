@@ -43,15 +43,15 @@ body {
 }
 
 body {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   background-color: #f3f2ef;
   position: relative;
   /* height: 100vh; */
 }
 
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .u-fixed-position-top {
   position: fixed;

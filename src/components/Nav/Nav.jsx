@@ -5,8 +5,11 @@ import { HiOutlineInboxIn } from "react-icons/hi";
 import LinkIcon from "./LinkIcon";
 import userImage from "../../assets/Images/user-image.jpg";
 import "./Nav.css";
+import { UserContext } from "../../Helpers/Context";
+import { useContext } from 'react';
 
 const Nav = () => {
+  const {socialBuzzUserData, setSocialBuzzUserData} = useContext(UserContext);
   return (
     <header className="header">
       <h1 className="logo">SocialBuzz</h1>
@@ -33,12 +36,12 @@ const Nav = () => {
           <li className="header__nav--right-item item-center-full">
             <div className="header__image">
               <img
-                src={userImage}
+                src={socialBuzzUserData && socialBuzzUserData.profilePhoto}
                 alt="user profile photo"
                 className="header__image--img"
               />
             </div>
-            <p className="header__nav-right--username">@zaphenath254</p>
+            <p className="header__nav-right--username">@{socialBuzzUserData && socialBuzzUserData.username}</p>
           </li>
           <li className="header__nav--link-item">
             <LinkIcon icon={<HiHome />} label="logout" />

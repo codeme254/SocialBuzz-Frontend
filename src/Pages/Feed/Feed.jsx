@@ -7,18 +7,25 @@ import FeedUserActionLinks from "../../components/FeedUserActionLinks/FeedUserAc
 import Follows from "../../components/Follows/Follows";
 import NewPost from "../../components/NewPost/NewPost";
 import Posts from "../../components/Posts/Posts";
+import { UserContext } from "../../Helpers/Context";
+import { useContext } from "react";
 const Feed = () => {
+  const { socialBuzzUserData, setSocialBuzzUserData } = useContext(UserContext);
+
   return (
     <div className="feed__container">
       <Nav />
       <div className="feed__body">
         <div className="feed__body--left">
           <FeedUserDetails
-            coverPhoto={coverPhoto}
-            profilePhoto={userImage}
-            fullName="dennis otwoma"
-            aboutText="I love my life"
-            username="@zaphenath254"
+            coverPhoto={socialBuzzUserData && socialBuzzUserData.coverPhoto}
+            profilePhoto={socialBuzzUserData && socialBuzzUserData.profilePhoto}
+            fullName={
+              socialBuzzUserData &&
+              `${socialBuzzUserData.firstName} ${socialBuzzUserData.lastName}`
+            }
+            aboutText={socialBuzzUserData && socialBuzzUserData.statusText}
+            username={socialBuzzUserData && `@${socialBuzzUserData.username}`}
             numberOfFollowers="56"
             numberOfFollowing="35"
             numberOfPosts="15"
@@ -26,7 +33,12 @@ const Feed = () => {
           <FeedUserActionLinks />
         </div>
         <div className="feed__body--center">
-          <NewPost userProfilePhoto={userImage} username="zaphenath254" />
+          <NewPost
+            userProfilePhoto={
+              socialBuzzUserData && socialBuzzUserData.profilePhoto
+            }
+            username={socialBuzzUserData && `@${socialBuzzUserData.username}`}
+          />
           <Posts />
         </div>
         <div className="feed__body--right">
