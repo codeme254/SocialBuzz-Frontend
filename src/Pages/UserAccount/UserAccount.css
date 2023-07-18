@@ -1,0 +1,96 @@
+.account-details {
+  padding-top: 8rem;
+  width: 80%;
+  margin: 1rem auto;
+}
+
+.user-account-container__profile-cover-photo {
+  height: 25rem;
+  position: relative;
+}
+
+.user-account__cover-photo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  --radius: 8px;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+
+.user-account-profile-photo {
+  --size: 12rem;
+  width: var(--size);
+  min-width: var(--size);
+  max-width: var(--size);
+  height: var(--size);
+  min-height: var(--size);
+  max-height: var(--size);
+  border-radius: 50%;
+  position: absolute;
+  left: 2rem;
+  bottom: -6rem;
+  border: 5px solid #fff;
+}
+
+.user-account-profile-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.user-information {
+  background-color: #fff;
+  padding: 1rem;
+  padding-top: 7rem;
+  --radius: 8px;
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  margin-bottom: 2rem;
+}
+
+.user-information__full-name {
+  font-size: 3rem;
+}
+
+.username {
+  font-size: 2rem;
+}
+
+.email-address span {
+  display: inline-block;
+  padding: 0.3rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: 100px;
+}
+
+.user-account-update-form {
+  width: 60%;
+  /* margin: 1rem auto; */
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.form-info {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.update-form-buttons__submit {
+  border: none;
+  outline: none;
+  display: inline-block;
+  padding: 1rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  margin-right: 1rem;
+  border-radius: 5px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
