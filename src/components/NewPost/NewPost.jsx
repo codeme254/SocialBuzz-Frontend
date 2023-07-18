@@ -12,7 +12,7 @@ const NewPost = ({ userProfilePhoto, username }) => {
     <div className="new-post">
       <PureModal
         portal={true}
-        width="800px"
+        width="700px"
         header="Create new post"
         isOpen={modal}
         closeButton="close"
@@ -28,7 +28,7 @@ const NewPost = ({ userProfilePhoto, username }) => {
             name=""
             id=""
             cols="30"
-            rows="10"
+            rows="20"
             placeholder="what do you want to talk about"
           ></textarea>
           <div className="file-upload">
