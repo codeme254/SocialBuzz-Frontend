@@ -1,0 +1,40 @@
+.comment {
+  display: flex;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.comment__user-photo {
+  --size: 4rem;
+  width: var(--size);
+  height: var(--size);
+  min-width: var(--size);
+  max-width: var(--size);
+  min-height: var(--size);
+  max-height: var(--size);
+  margin-right: 0.5rem;
+}
+
+.comment__user-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.comment__main--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.comment__main-header--date {
+  color: #333;
+}
+
+.comment__body {
+  text-align: justify;
+  color: #444;
+}

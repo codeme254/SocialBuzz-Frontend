@@ -2,6 +2,10 @@ import "./Post.css";
 import { BiUserPlus, BiLike, BiCommentDetail, BiSend } from "react-icons/bi";
 import { UserContext } from "../../Helpers/Context";
 import { useContext } from "react";
+import Comment from "../Comment/Comment";
+import sampleProfilePicture from "../../assets/Images/user-3.jpg";
+import sampleProfilePicture2 from "../../assets/Images/user-8.jpg";
+
 const Post = ({
   userProfilePhoto,
   userFirstName,
@@ -72,9 +76,26 @@ const Post = ({
             <BiSend />
           </button>
         </form>
+
+        <div className="post__comments">
+          <Comment
+            authorFirstName="Jane"
+            authorLastName="dodds"
+            date="9th June 2023 at 4:05pm"
+            commentText="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea eaque nihil quam culpa doloremque magnam Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea eaque nihil quam culpa doloremque magnam Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea eaque nihil quam culpa doloremque magnam"
+            userProfilePhoto={sampleProfilePicture}
+          />
+
+          <Comment
+            authorFirstName="Cynthia"
+            authorLastName="warimwe"
+            date="9th June 2023 at 4:05pm"
+            commentText="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea eaque nihil quam culpa doloremque magnam Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea eaque nihil quam culpa doloremque magnam Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea eaque nihil quam culpa doloremque magnam"
+            userProfilePhoto={sampleProfilePicture2}
+          />
+        </div>
       </div>
     </div>
   ) : null;
 };
-
 export default Post;
