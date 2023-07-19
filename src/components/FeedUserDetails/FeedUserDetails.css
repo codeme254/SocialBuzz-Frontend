@@ -20,7 +20,7 @@
 
 .feed-user-details__user {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   transform: translateY(-28px);
   padding: 0 1rem;
 }

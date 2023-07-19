@@ -10,7 +10,11 @@ const FeedUserActionLinks = () => {
     <div className="feed_user-action-links">
       <FeedUserActionLink label="start a new post" icon={<AiOutlinePlus />} />
       <FeedUserActionLink label="my posts" icon={<GiPostStamp />} />
-      <FeedUserActionLink label="my account" to="/my-account" icon={<MdOutlineAccountBox />} />
+      <FeedUserActionLink
+        label="my account"
+        to="/my-account"
+        icon={<MdOutlineAccountBox />}
+      />
       <FeedUserActionLink
         label="update my account information"
         to="/my-account"

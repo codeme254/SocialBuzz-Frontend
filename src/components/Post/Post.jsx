@@ -1,5 +1,7 @@
 import "./Post.css";
-import { BiUserPlus, BiLike, BiCommentDetail } from "react-icons/bi";
+import { BiUserPlus, BiLike, BiCommentDetail, BiSend } from "react-icons/bi";
+import { UserContext } from "../../Helpers/Context";
+import { useContext } from "react";
 const Post = ({
   userProfilePhoto,
   userFirstName,
@@ -10,6 +12,7 @@ const Post = ({
   numLikes,
   numComments,
 }) => {
+  const { socialBuzzUserData, setSocialBuzzUserData } = useContext(UserContext);
   return postImage || postText ? (
     <div className="post">
       <div className="post-user">
@@ -50,10 +53,26 @@ const Post = ({
           </button>
         </div>
       </div>
-      {/* <form action="" className="post-comment">
-        <input type="text" name="" id="" className="post-comment__input" />
-        <button>comment</button>
-      </form> */}
+      <div className="post__bottom">
+        <form action="" className="post-comment">
+          <div className="post-comment__current-user-image">
+            <img
+              src={socialBuzzUserData && socialBuzzUserData.profilePhoto}
+              alt="your profile photo"
+            />
+          </div>
+          <input
+            type="text"
+            name=""
+            id=""
+            placeholder="what are your thoughts..."
+            className="post-comment__input"
+          />
+          <button className="post-submit-btn">
+            <BiSend />
+          </button>
+        </form>
+      </div>
     </div>
   ) : null;
 };

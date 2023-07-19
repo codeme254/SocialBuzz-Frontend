@@ -95,6 +95,7 @@
 .file-upload {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .file-upload-prompt {
@@ -145,4 +146,47 @@
   left: 0;
   transform: scale(5);
   opacity: 0;
+}
+
+.publish-post-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.publish-btn {
+  border: none;
+  outline: none;
+  background-color: var(--color-primary);
+  width: 60%;
+  padding: 2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1.7rem;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+}
+
+.post-header__user-photo {
+  --size: 5rem;
+  width: var(--size);
+  height: var(--size);
+  min-width: var(--size);
+  max-width: var(--size);
+  min-height: var(--size);
+  max-height: var(--size);
+  margin-right: 1rem;
+}
+
+.post-header__user-photo img {
+  width: 100%;
+  height: var(--size);
+  border-radius: 50%;
 }
