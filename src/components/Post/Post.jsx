@@ -15,6 +15,7 @@ const Post = ({
   postImage,
   numLikes,
   numComments,
+  post_id,
 }) => {
   const { socialBuzzUserData, setSocialBuzzUserData } = useContext(UserContext);
   return postImage || postText ? (
@@ -69,7 +70,11 @@ const Post = ({
             type="text"
             name=""
             id=""
-            placeholder="what are your thoughts..."
+            placeholder={
+              socialBuzzUserData
+                ? `What do you think about this ${socialBuzzUserData.username}...`
+                : `What do you think about this...`
+            }
             className="post-comment__input"
           />
           <button className="post-submit-btn">

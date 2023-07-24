@@ -43,7 +43,7 @@ const Feed = () => {
             userProfilePhoto={
               socialBuzzUserData && socialBuzzUserData.profilePhoto
             }
-            username={socialBuzzUserData && `@${socialBuzzUserData.username}`}
+            username={socialBuzzUserData && `${socialBuzzUserData.username}`}
           />
           <Posts />
         </div>
