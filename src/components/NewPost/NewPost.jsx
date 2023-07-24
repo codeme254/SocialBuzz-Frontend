@@ -74,14 +74,15 @@ const NewPost = ({ userProfilePhoto, username }) => {
       console.log("Uploading with the post photo");
       const imageUrl = await uploadPostPhoto();
       if (imageUrl) {
-        setPostPhotoUrl(imageUrl);
+        // setPostPhotoUrl(imageUrl);
+        data['image'] = imageUrl
       } else {
         toast.error("An error occurred while uploading your post image");
         return;
       }
     }
     console.log(`Post photo url is ${postPhotoUrl}`);
-    data["image"] = postPhotoUrl;
+    // data["image"] = postPhotoUrl;
     if (data["text"] === "") data["text"] = null;
     const response = await fetch(`${apiDomain}/posts`, {
       method: "post",
@@ -91,6 +92,7 @@ const NewPost = ({ userProfilePhoto, username }) => {
       },
     });
     const responseData = await response.json();
+    console.log(responseData)
     if (response.ok) {
       toast.success("Post published successfully");
     } else {

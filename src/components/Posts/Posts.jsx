@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false)
   useEffect(() => {
     const fetchPosts = async () => {
       const posts = await fetch(`${apiDomain}/posts`, {
@@ -17,10 +18,13 @@ const Posts = () => {
       const posts_response = await posts.json();
       setPosts(posts_response);
     };
+    setIsLoading(true)
     fetchPosts();
+    setIsLoading(false)
   }, []);
   return (
     <div className="posts">
+      {isLoading && <p>Loading posts, please wait...</p>}
       {posts.length <= 0 ? (
         <p>No posts found at this time</p>
       ) : (
@@ -28,9 +32,9 @@ const Posts = () => {
           <Post
             key={post.post_id}
             post_id={post.post_id}
-            userProfilePhoto={post.profilePhoto}
-            userFirstName={post.firstName}
-            userLastName={post.lastName}
+            userProfilePhoto={post.author.profilePhoto}
+            userFirstName={post.author.firstName}
+            userLastName={post.author.lastName}
             datePosted={`${new Date(post.dateCreated).toUTCString()}`}
             postText={post.text}
             postImage={post.image}
@@ -39,60 +43,6 @@ const Posts = () => {
           />
         ))
       )}
-      <Post
-        userProfilePhoto={userImage}
-        userFirstName="jane"
-        userLastName="krugger"
-        datePosted="4th March 2023, at 4:05PM"
-        postText={samplePostText}
-        postImage={photoPostExample}
-        numLikes="356"
-        numComments="35"
-      />
-
-      <Post
-        userProfilePhoto={userImage}
-        userFirstName="jane"
-        userLastName="krugger"
-        datePosted="4th March 2023, at 4:05PM"
-        // postText={samplePostText}
-        postImage={photoPostExample}
-        numLikes="356"
-        numComments="35"
-      />
-
-      <Post
-        userProfilePhoto={userImage}
-        userFirstName="jane"
-        userLastName="krugger"
-        datePosted="4th March 2023, at 4:05PM"
-        postText={samplePostText}
-        // postImage={photoPostExample}
-        numLikes="356"
-        numComments="35"
-      />
-
-      <Post
-        userProfilePhoto={userImage}
-        userFirstName="jane"
-        userLastName="krugger"
-        datePosted="4th March 2023, at 4:05PM"
-        postText={samplePostText}
-        postImage={photoPostExample}
-        numLikes="356"
-        numComments="35"
-      />
-
-      <Post
-        userProfilePhoto={userImage}
-        userFirstName="jane"
-        userLastName="krugger"
-        datePosted="4th March 2023, at 4:05PM"
-        postText={samplePostText}
-        postImage={photoPostExample}
-        numLikes="356"
-        numComments="35"
-      />
     </div>
   );
 };
