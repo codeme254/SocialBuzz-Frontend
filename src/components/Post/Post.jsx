@@ -3,8 +3,9 @@ import { BiUserPlus, BiLike, BiCommentDetail, BiSend } from "react-icons/bi";
 import { UserContext } from "../../Helpers/Context";
 import { useContext } from "react";
 import Comment from "../Comment/Comment";
-import sampleProfilePicture from "../../assets/Images/user-3.jpg";
-import sampleProfilePicture2 from "../../assets/Images/user-8.jpg";
+import { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { apiDomain } from "../../utils/utils";
 
 const Post = ({
   userProfilePhoto,
@@ -18,6 +19,46 @@ const Post = ({
   post_id,
 }) => {
   const { socialBuzzUserData, setSocialBuzzUserData } = useContext(UserContext);
+  const [comments, setComments] = useState([]);
+  const [isSubmittingComment, setIsSubmittingComment] = useState(false);
+  const { register, handleSubmit } = useForm();
+  const username = socialBuzzUserData.username;
+
+  useEffect(() => {
+    if (!post_id) return;
+    const fetchPostComments = async () => {
+      const response = await fetch(`${apiDomain}/comments/${post_id}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const comments = await response.json();
+      if (Array.isArray(comments)) setComments(comments);
+    };
+    setIsSubmittingComment(true);
+    fetchPostComments();
+    setIsSubmittingComment(false);
+  }, [comments]);
+
+  const onSubmit = async (data) => {
+    if (!username) return;
+    if (!post_id) return;
+    data["author"] = username;
+
+    const newComment = await fetch(`${apiDomain}/comments/${post_id}`, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (newComment.ok) {
+      console.log(`Successfully commented`);
+    } else {
+      console.log(`Not successfully done`);
+    }
+  };
   return postImage || postText ? (
     <div className="post">
       <div className="post-user">
@@ -59,7 +100,12 @@ const Post = ({
         </div>
       </div>
       <div className="post__bottom">
-        <form action="" className="post-comment">
+        <form className="post-comment" onSubmit={handleSubmit(onSubmit)}>
+          {isSubmittingComment ? (
+            <div className="post-comment-submitting">
+              Submitting your comment
+            </div>
+          ) : null}
           <div className="post-comment__current-user-image">
             <img
               src={socialBuzzUserData && socialBuzzUserData.profilePhoto}
@@ -68,8 +114,7 @@ const Post = ({
           </div>
           <input
             type="text"
-            name=""
-            id=""
+            {...register("comment_text")}
             placeholder={
               socialBuzzUserData
                 ? `What do you think about this ${socialBuzzUserData.username}...`
@@ -83,21 +128,21 @@ const Post = ({
         </form>
 
         <div className="post__comments">
-          <Comment
-            authorFirstName="Jane"
-            authorLastName="dodds"
-            date="9th June 2023 at 4:05pm"
-            commentText="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea eaque nihil quam culpa doloremque magnam Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea eaque nihil quam culpa doloremque magnam Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea eaque nihil quam culpa doloremque magnam"
-            userProfilePhoto={sampleProfilePicture}
-          />
-
-          <Comment
-            authorFirstName="Cynthia"
-            authorLastName="warimwe"
-            date="9th June 2023 at 4:05pm"
-            commentText="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea eaque nihil quam culpa doloremque magnam Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea eaque nihil quam culpa doloremque magnam Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea eaque nihil quam culpa doloremque magnam"
-            userProfilePhoto={sampleProfilePicture2}
-          />
+          {comments.length <= 0 ? (
+            <p className="no-comments-text">
+              No comments, be the first to comment
+            </p>
+          ) : (
+            comments.map((comment, i) => (
+              <Comment
+                userProfilePhoto={comment.author.profilePhoto}
+                commentText={comment.comment_text}
+                authorFirstName={comment.author.firstName}
+                authorLastName={comment.author.lastName}
+                date={new Date(comment.dateCreated).toUTCString()}
+              />
+            ))
+          )}
         </div>
       </div>
     </div>

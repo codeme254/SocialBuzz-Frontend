@@ -23,6 +23,10 @@
   border-radius: 50%;
 }
 
+.comment__main {
+  min-width: 90%;
+}
+
 .comment__main--header {
   display: flex;
   justify-content: space-between;

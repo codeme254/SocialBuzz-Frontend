@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     const fetchPosts = async () => {
       const posts = await fetch(`${apiDomain}/posts`, {
@@ -18,9 +18,9 @@ const Posts = () => {
       const posts_response = await posts.json();
       setPosts(posts_response);
     };
-    setIsLoading(true)
+    setIsLoading(true);
     fetchPosts();
-    setIsLoading(false)
+    setIsLoading(false);
   }, []);
   return (
     <div className="posts">

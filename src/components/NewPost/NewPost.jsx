@@ -75,7 +75,7 @@ const NewPost = ({ userProfilePhoto, username }) => {
       const imageUrl = await uploadPostPhoto();
       if (imageUrl) {
         // setPostPhotoUrl(imageUrl);
-        data['image'] = imageUrl
+        data["image"] = imageUrl;
       } else {
         toast.error("An error occurred while uploading your post image");
         return;
@@ -92,7 +92,7 @@ const NewPost = ({ userProfilePhoto, username }) => {
       },
     });
     const responseData = await response.json();
-    console.log(responseData)
+    console.log(responseData);
     if (response.ok) {
       toast.success("Post published successfully");
     } else {
