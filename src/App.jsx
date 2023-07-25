@@ -5,6 +5,7 @@ import Login from "./Pages/Login/Login";
 import Feed from "./Pages/Feed/Feed";
 import Inbox from "./Pages/Inbox/Inbox";
 import UserAccount from "./Pages/UserAccount/UserAccount";
+import Follows from "./components/Follows/Follows";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { UserContext } from "./Helpers/Context";
@@ -39,6 +40,7 @@ function App() {
             <Route path="/feed" element={<Feed />} />
             <Route path="/messaging" element={<Inbox />} />
             <Route path="/my-account" element={<UserAccount />} />
+            <Route path="/followers" element={<Follows />}/>
           </Routes>
         </BrowserRouter>
         <ToastContainer />

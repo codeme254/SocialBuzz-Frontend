@@ -139,6 +139,7 @@ const Post = ({
           ) : (
             comments.map((comment, i) => (
               <Comment
+              key={i}
                 userProfilePhoto={comment.author.profilePhoto}
                 commentText={comment.comment_text}
                 authorFirstName={comment.author.firstName}
