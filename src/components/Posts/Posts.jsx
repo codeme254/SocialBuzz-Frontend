@@ -39,7 +39,7 @@ const Posts = () => {
             postText={post.text}
             postImage={post.image}
             numLikes={post.numberOfLikes}
-            numComments={post.numberOfComments}
+            // numComments={post.numberOfComments}
           />
         ))
       )}

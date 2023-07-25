@@ -3,7 +3,7 @@ import { BiUserPlus, BiLike, BiCommentDetail, BiSend } from "react-icons/bi";
 import { UserContext } from "../../Helpers/Context";
 import { useContext } from "react";
 import Comment from "../Comment/Comment";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { apiDomain } from "../../utils/utils";
 
@@ -15,13 +15,15 @@ const Post = ({
   postText,
   postImage,
   numLikes,
-  numComments,
+  // numComments,
   post_id,
 }) => {
   const { socialBuzzUserData, setSocialBuzzUserData } = useContext(UserContext);
   const [comments, setComments] = useState([]);
+  const [numComments, setNumComments] = useState(0);
   const [isSubmittingComment, setIsSubmittingComment] = useState(false);
   const { register, handleSubmit } = useForm();
+  const inputRef = useRef(null);
   const username = socialBuzzUserData.username;
 
   useEffect(() => {
@@ -34,7 +36,10 @@ const Post = ({
         },
       });
       const comments = await response.json();
-      if (Array.isArray(comments)) setComments(comments);
+      if (Array.isArray(comments)) {
+        setComments(comments);
+        setNumComments(comments.length);
+      }
     };
     setIsSubmittingComment(true);
     fetchPostComments();
@@ -54,7 +59,7 @@ const Post = ({
       },
     });
     if (newComment.ok) {
-      console.log(`Successfully commented`);
+      inputRef.current.value = "";
     } else {
       console.log(`Not successfully done`);
     }
@@ -115,6 +120,7 @@ const Post = ({
           <input
             type="text"
             {...register("comment_text")}
+            ref={inputRef}
             placeholder={
               socialBuzzUserData
                 ? `What do you think about this ${socialBuzzUserData.username}...`
