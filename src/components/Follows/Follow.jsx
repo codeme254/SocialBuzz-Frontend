@@ -9,6 +9,7 @@ const Follow = ({ profilePhoto, firstName, lastName, username }) => {
   const currentUser = socialBuzzUserData.username;
   const handleFollow = async () => {
     if (!currentUser && !username) return toast.error("Failed...")
+    console.log(`${currentUser} is trying to follow ${username}`)
     const followUser = await fetch(`${apiDomain}/follows/${username}/${currentUser}`, {
       method: "POST",
       headers: {

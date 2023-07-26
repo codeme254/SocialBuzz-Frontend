@@ -19,7 +19,7 @@ const Nav = () => {
             <LinkIcon icon={<HiHome />} to="/feed" label="home" />
           </li>
           <li className="header__nav--link-item">
-            <LinkIcon icon={<IoIosPeople />} label="community" />
+            <LinkIcon icon={<IoIosPeople />} label="community" to="/community" />
           </li>
           {/* <li className="header__nav--link-item">
             <LinkIcon icon={<MdNotificationsActive />} label="notifications" />

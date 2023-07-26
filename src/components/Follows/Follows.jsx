@@ -30,7 +30,7 @@ const Follows = () => {
         <div>
           <h3 className="follows__title">who to follow</h3>
           {follows.map((follow, i) => (
-          <Follow key={i} profilePhoto={follow.profilePhoto} firstName={follow.firstName} lastName={follow.lastName} username={follow.lastName} />
+          <Follow key={i} profilePhoto={follow.profilePhoto} firstName={follow.firstName} lastName={follow.lastName} username={follow.username} />
         ))}
         </div>
       }
